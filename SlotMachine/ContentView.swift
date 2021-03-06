@@ -7,15 +7,36 @@
 
 import SwiftUI
 
+// Reels symboles variables
+var blanks = 0
+var cherry = 0
+var banana = 0
+var watermelon = 0
+var lemon = 0
+var blackberries = 0
+var grapes = 0
+var strawberry = 0
+var star = 0
+
+private var symbols = ["spin", "spin", "spin"]
+private var numbers = [0, 0, 0]
+
+var winnings = 0
+var playerBet = 0
+
+struct UserCredit {
+    var credits = 1000
+    var bet : String = "10"
+    var jackpot = 5000
+    var tries = 0
+    
+    var showingAlert = false
+}
+
 struct ContentView: View {
-    
-    private var symbols = ["spin", "cherry", "apple", "banana", "watermelon", "lemon", "blackberries", "grapes", "strawberry", "star"]
-    
-    @State private var numbers = [0, 0, 0]
-    @State private var credits = 1000
-    @State private var bet : String = "10"
     @State private var disabled = false
     @State private var spinBackgroundColor = Color.pink
+    @State private var userCredit = UserCredit()
     
     var body: some View {
         ZStack {
@@ -45,7 +66,7 @@ struct ContentView: View {
                 Spacer().frame(height: 10)
                 
                 // Credits counter
-                Text("Credits: \(credits)")
+                Text("Credits: \(userCredit.credits)")
                     .foregroundColor(.black)
                     .padding(.all, 10)
                     .background(Color.white).opacity(0.5)
@@ -70,7 +91,7 @@ struct ContentView: View {
 
                 HStack {
                     // Jackpot
-                    Text("5000")
+                    Text(String(userCredit.jackpot))
                         .frame(width: 200, height: 40)
                         .foregroundColor(.black)
                         .padding([.leading, .trailing], 10)
@@ -78,8 +99,9 @@ struct ContentView: View {
                         .cornerRadius(20)
                     
                     // Jackpot
-                    TextField("Enter bet amount", text: $bet, onEditingChanged: {_ in
-                        if (Int(bet)! > credits) {
+                    TextField("Enter bet amount", text: $userCredit.bet, onEditingChanged: {_ in
+                        playerBet = Int(userCredit.bet)!
+                        if (Int(userCredit.bet)! > userCredit.credits) {
                             print("Bet value cannot be greater than total credits")
                             disabled = true
                             spinBackgroundColor = Color.gray
@@ -104,19 +126,19 @@ struct ContentView: View {
                                 
                 // Cards
                 HStack {
-                    Image(symbols[numbers[0]])
+                    Image(symbols[0])
                         .resizable()
                         .aspectRatio(1, contentMode: .fit)
                         .background(Color.white.opacity(0.5))
                         .cornerRadius(20)
                     
-                    Image(symbols[numbers[1]])
+                    Image(symbols[1])
                         .resizable()
                         .aspectRatio(1, contentMode: .fit)
                         .background(Color.white.opacity(0.5))
                         .cornerRadius(20)
                     
-                    Image(symbols[numbers[2]])
+                    Image(symbols[2])
                         .resizable()
                         .aspectRatio(1, contentMode: .fit)
                         .background(Color.white.opacity(0.5))
@@ -125,14 +147,14 @@ struct ContentView: View {
                                                             
                 // Button Spin
                 Button(action: {
-                    if (Int(bet)! > credits) {
+                    if (Int(userCredit.bet)! > userCredit.credits) {
                         return
                     }
-                    credits = credits - Int(bet)!
+                    userCredit.credits = userCredit.credits - Int(userCredit.bet)!
+                    
                     // Spin Action
-                    self.numbers[0] = Int.random(in: 0...symbols.count - 1)
-                    self.numbers[1] = Int.random(in: 0...symbols.count - 1)
-                    self.numbers[2] = Int.random(in: 0...symbols.count - 1)
+                    spinReels()
+                    determineWinnings(userCredit: &userCredit)
                 }) {
                     Text("Spin")
                         .bold()
@@ -142,14 +164,31 @@ struct ContentView: View {
                         .background(spinBackgroundColor)
                         .cornerRadius(20)
                 }.disabled(disabled)
+                .alert(isPresented:$userCredit.showingAlert) {
+                            Alert(
+                                title: Text("Congratulations! You Won the Jackpot!!!"),
+                                message: Text(String(userCredit.jackpot)),
+                                dismissButton: .destructive(Text("***YAY***")) {
+                                    print("***YAY***")
+                                }
+                            )
+                        }
                 
                 HStack {
                     // Button reset
                     Button(action: {
                         // Reset action
-                        self.numbers[0] = 0
-                        self.numbers[1] = 0
-                        self.numbers[2] = 0
+                        numbers[0] = 0
+                        numbers[1] = 0
+                        numbers[2] = 0
+                        
+                        symbols[0] = "spin"
+                        symbols[1] = "spin"
+                        symbols[2] = "spin"
+                        
+                        userCredit.credits = 1000
+                        userCredit.jackpot = 5000
+                        userCredit.bet = "10"
                     }) {
                         Text("Reset")
                             .bold()
@@ -159,7 +198,7 @@ struct ContentView: View {
                             .background(Color.blue)
                             .cornerRadius(20)
                     }
-                    // Button reset
+                    // Button Quit
                     Button(action: {
                         // Quit action
                         exit(0)
@@ -176,6 +215,145 @@ struct ContentView: View {
             }
         }
     }
+}
+
+func spinReels() -> [String] {
+
+    for spin in 0...2 {
+        numbers[spin] = Int(((drand48() * 70) + 1).rounded(.down))
+        switch numbers[spin] {
+        case checkRange(value: numbers[spin], lowerBounds: 1, upperBounds: 27):
+            symbols[spin] = "blanks";
+            blanks += 1
+        case checkRange(value: numbers[spin], lowerBounds: 28, upperBounds: 37):
+            symbols[spin] = "cherry";
+            cherry += 1
+        case checkRange(value: numbers[spin], lowerBounds: 38, upperBounds: 46):
+            symbols[spin] = "banana";
+            banana += 1
+        case checkRange(value: numbers[spin], lowerBounds: 47, upperBounds: 54):
+            symbols[spin] = "watermelon";
+            watermelon += 1
+        case checkRange(value: numbers[spin], lowerBounds: 55, upperBounds: 59):
+            symbols[spin] = "lemon";
+            lemon += 1
+        case checkRange(value: numbers[spin], lowerBounds: 60, upperBounds: 62):
+            symbols[spin] = "blackberries";
+            blackberries += 1
+        case checkRange(value: numbers[spin], lowerBounds: 63, upperBounds: 64):
+            symbols[spin] = "grapes";
+            grapes += 1
+        case checkRange(value: numbers[spin], lowerBounds: 65, upperBounds: 68):
+            symbols[spin] = "strawberry";
+            strawberry += 1
+        case checkRange(value: numbers[spin], lowerBounds: 69, upperBounds: 70):
+            symbols[spin] = "star";
+            star += 1
+        default:
+            symbols[spin] = " "
+        }
+    }
+    return symbols
+}
+
+private func determineWinnings( userCredit : inout UserCredit) {
+    if (blanks == 0) {
+        if (cherry == 3) {
+            winnings = Int(userCredit.bet)! * 10;
+        }
+        else if (banana == 3) {
+            winnings = Int(userCredit.bet)! * 20;
+        }
+        else if (watermelon == 3) {
+            winnings = Int(userCredit.bet)! * 30;
+        }
+        else if (lemon == 3) {
+            winnings = Int(userCredit.bet)! * 40;
+        }
+        else if (blackberries == 3) {
+            winnings = Int(userCredit.bet)! * 50;
+        }
+        else if (grapes == 3) {
+            winnings = Int(userCredit.bet)! * 75;
+        }
+        else if (strawberry == 3) {
+            winnings = Int(userCredit.bet)! * 100;
+        }
+        else if (star == 3) {
+            winnings = userCredit.jackpot;
+            userCredit.tries = 0
+            
+            // show special message after winning jackpot
+            userCredit.showingAlert = true;
+
+        }
+        else if (cherry == 2) {
+            winnings = Int(userCredit.bet)! * 2;
+        }
+        else if (banana == 2) {
+            winnings = Int(userCredit.bet)! * 2;
+        }
+        else if (watermelon == 2) {
+            winnings = Int(userCredit.bet)! * 3;
+        }
+        else if (lemon == 2) {
+            winnings = Int(userCredit.bet)! * 4;
+        }
+        else if (blackberries == 2) {
+            winnings = Int(userCredit.bet)! * 5;
+        }
+        else if (grapes == 2) {
+            winnings = Int(userCredit.bet)! * 10;
+        }
+        else if (strawberry == 2) {
+            winnings = Int(userCredit.bet)! * 20;
+        }
+        else if (star == 2) {
+            winnings = Int(userCredit.bet)! * 50;
+        }
+        else if (star == 1) {
+            winnings = Int(userCredit.bet)! * 5;
+        }
+        else {
+            winnings = Int(userCredit.bet)! * 1;
+        }
+        print("Win!");
+        userCredit.credits = userCredit.credits + winnings
+    }
+    else {
+        print("Loss!");
+    }
+    increaseJackpotAfterTenTries(userCredit: &userCredit)
+    resetFruitTally();
+}
+
+private func increaseJackpotAfterTenTries(userCredit: inout UserCredit) {
+    // Increase jackpot by 5000 after 10 tries
+    if (userCredit.tries > 8) {
+        userCredit.jackpot += 5000
+        userCredit.tries = 0
+    } else {
+        userCredit.tries += 1
+    }
+}
+
+private func checkRange(value: Int, lowerBounds: Int, upperBounds: Int) -> Int{
+    return (value >= lowerBounds && value <= upperBounds) ? value : -1
+}
+
+private func resetFruitTally() {
+    blanks = 0
+    cherry = 0
+    banana = 0
+    watermelon = 0
+    lemon = 0
+    blackberries = 0
+    grapes = 0
+    strawberry = 0
+    star = 0
+    
+    // Reset winning score
+    winnings = 0
 }
 
 struct ContentView_Previews: PreviewProvider {
