@@ -1,9 +1,14 @@
 //
-//  ContentView.swift
+//  HelpView.swift
 //  SlotMachine
 //
-//  Created by Reda Mehali on 2/18/21.
-//
+//  Created by Reda Mehali on 3/9/21.
+//  Student ID: 301-159-604
+
+//  This is the main screen of the slot
+//  machine game. It contains a set of views
+//  like (jackpot amount, highest payout, help
+//  nav button, spinning reels, and so on.
 
 import SwiftUI
 
@@ -29,12 +34,15 @@ struct UserCredit {
     var bet : String = "10"
     var jackpot = 5000
     var tries = 0
+    // Tie to data persistance
+    var highestAmount = UserDefaults.standard.integer(forKey: "highestAmount")
     
     var showingAlert = false
 }
 
 struct ContentView: View {
     @State private var disabled = false
+    @State var isModal: Bool = false
     @State private var spinBackgroundColor = Color.pink
     @State private var userCredit = UserCredit()
     
@@ -43,15 +51,26 @@ struct ContentView: View {
             // Background
             Rectangle()
                 .foregroundColor(Color(red:200/255, green: 143/255, blue: 32/255))
-                .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                .edgesIgnoringSafeArea(.all)
             
             Rectangle()
                 .foregroundColor(Color(red:228/255, green: 195/255, blue: 76/255))
-                .rotationEffect(Angle(degrees: 45)).edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                .rotationEffect(Angle(degrees: 45)).edgesIgnoringSafeArea(.all)
             
-            
-            VStack(spacing: 20) {
-                
+            VStack(spacing: 8) {
+                HStack {
+                    Text(" highest payout: \(userCredit.highestAmount)")
+                        .foregroundColor(.white).font(.system(size: 20))
+                    Spacer()
+                    Button(action: {
+                            self.isModal = true
+                        }) {
+                        Image("help").resizable().frame(width: 32, height: 32)
+                        }.sheet(isPresented: $isModal, content: {
+                            HelpView()
+                        }).padding(.trailing, 8)
+                }
+
                 // Title
                 HStack {
                     Image(systemName: "star.fill")
@@ -317,7 +336,9 @@ private func determineWinnings( userCredit : inout UserCredit) {
         else {
             winnings = Int(userCredit.bet)! * 1;
         }
+        onUpdateHighestPayOutAmount(highestAmount: &userCredit.highestAmount, newAmount: winnings)
         print("Win!");
+        print("The amount won is \(winnings)");
         userCredit.credits = userCredit.credits + winnings
     }
     else {
@@ -325,6 +346,13 @@ private func determineWinnings( userCredit : inout UserCredit) {
     }
     increaseJackpotAfterTenTries(userCredit: &userCredit)
     resetFruitTally();
+}
+
+private func onUpdateHighestPayOutAmount(highestAmount: inout Int, newAmount: Int) {
+    if (newAmount > highestAmount) {
+        UserDefaults.standard.set(newAmount, forKey: "highestAmount")
+        highestAmount = newAmount
+    }
 }
 
 private func increaseJackpotAfterTenTries(userCredit: inout UserCredit) {

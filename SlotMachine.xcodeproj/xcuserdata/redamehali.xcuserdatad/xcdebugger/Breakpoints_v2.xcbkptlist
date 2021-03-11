@@ -7,69 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6876C3C8-CE2C-4FA8-9C0D-C1AE0794128D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SlotMachine/ContentView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "body"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "6876C3C8-CE2C-4FA8-9C0D-C1AE0794128D - 8b2220a5c10ab8dd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.edgesIgnoringSafeArea(SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.edgesIgnoringSafeArea(SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.scaleEffect(_: CoreGraphics.CGFloat, anchor: SwiftUI.UnitPoint) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0, SwiftUI.Spacer)&gt;&gt;, SwiftUI.Spacer, SwiftUI.Button&lt;&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Spacer)&gt;&gt;)&gt; in SlotMachine.ContentView.body.getter : some"
-                  moduleName = "SlotMachine"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/redamehali/Documents/CentennialCourses/MAPD724%20Advanced%20iOS%20Dev/SlotMachine/SlotMachine/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "1245">
-               </Location>
-               <Location
-                  uuid = "6876C3C8-CE2C-4FA8-9C0D-C1AE0794128D - c8a31ee879d399e8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Spacer, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.scaleEffect(_: CoreGraphics.CGFloat, anchor: SwiftUI.UnitPoint) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0, SwiftUI.Spacer)&gt;&gt;, SwiftUI.Spacer, SwiftUI.Button&lt;&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Spacer)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.edgesIgnoringSafeArea(SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.edgesIgnoringSafeArea(SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.scaleEffect(_: CoreGraphics.CGFloat, anchor: SwiftUI.UnitPoint) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0, SwiftUI.Spacer)&gt;&gt;, SwiftUI.Spacer, SwiftUI.Button&lt;&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Spacer)&gt;&gt;)&gt; in SlotMachine.ContentView.body.getter : some"
-                  moduleName = "SlotMachine"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/redamehali/Documents/CentennialCourses/MAPD724%20Advanced%20iOS%20Dev/SlotMachine/SlotMachine/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
-                  offsetFromSymbolStart = "587">
-               </Location>
-               <Location
-                  uuid = "6876C3C8-CE2C-4FA8-9C0D-C1AE0794128D - c8a31ee879d39a4b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Spacer, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.scaleEffect(_: CoreGraphics.CGFloat, anchor: SwiftUI.UnitPoint) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0, SwiftUI.Spacer)&gt;&gt;, SwiftUI.Spacer, SwiftUI.Button&lt;&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Spacer)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.edgesIgnoringSafeArea(SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.edgesIgnoringSafeArea(SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.scaleEffect(_: CoreGraphics.CGFloat, anchor: SwiftUI.UnitPoint) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0, SwiftUI.Spacer)&gt;&gt;, SwiftUI.Spacer, SwiftUI.Button&lt;&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Spacer)&gt;&gt;)&gt; in SlotMachine.ContentView.body.getter : some"
-                  moduleName = "SlotMachine"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/redamehali/Documents/CentennialCourses/MAPD724%20Advanced%20iOS%20Dev/SlotMachine/SlotMachine/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "4755">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "F2E22B3E-7796-4900-8B3E-41F4AF41E1C9"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -77,8 +14,8 @@
             filePath = "SlotMachine/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
@@ -118,54 +55,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6701DC29-E437-4E0C-A905-69C5E8B8B4D4"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SlotMachine/ContentView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "222"
-            endingLineNumber = "222"
-            landmarkName = "spinReels()"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E9EAB2A8-4FB0-4B03-B8FC-9405AFB865C4"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SlotMachine/ContentView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "260"
-            endingLineNumber = "260"
-            landmarkName = "determineWinnings(userCredit:)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "96939D16-FE58-438A-9451-C921A85ACF1D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SlotMachine/ContentView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "332"
-            endingLineNumber = "332"
-            landmarkName = "increaseJackpotAfterTenTries(userCredit:)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "BEC5C58E-B0EF-4E95-A86C-55288BEB1247"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -173,26 +62,10 @@
             filePath = "SlotMachine/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "body"
             landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "01EFABF4-7D48-4639-A657-2B7F13F231B7"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SlotMachine/ContentView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "282"
-            endingLineNumber = "282"
-            landmarkName = "determineWinnings(userCredit:)"
-            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
